@@ -28,8 +28,19 @@ const MenuLinks=[
 const DropdownLinks=[
   {
    id:1,
-   name:"t" 
-  }
+   name:"trending products",
+   link:"#" 
+  },
+  {
+    id:2,
+    name:"best selling",
+    link:"#" 
+   },
+   {
+    id:3,
+    name:"top rated",
+    link:"#" 
+   }
 ]
 
 function Navbar() {
@@ -63,13 +74,18 @@ function Navbar() {
                     Quick links
                   </a>
                   {/*drop down links*/}
-                  <div>
-                    <ul>
+                  <div className='absolute z-[9999] hidden group-hover:block 
+                  w-[200px] rounded-md bg-white shadow-md dark:bg-gray-900 p-2 dark:text-white  '>
+                    <ul className='space-y-2 '>
 
                       {
                         DropdownLinks.map((data,index)=>(
                           <li>
-
+                            <a className='text-gray-500 hover:text-black 
+                            dark:hover:text-white duration-200 p-2 hover:bg-primary/20 inline-block w-full
+                            rounded-md font-semibold' href={data.link}>
+                              {data.name}
+                            </a>
                           </li>
                         ))
                       }
